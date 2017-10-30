@@ -5,3 +5,31 @@
 .App-logo {
   height: 60px;
 }
+
+.home-promo-block {
+	height:calc(100vh - 126px);
+	background: linear-gradient(to left bottom, #FFF 50%, rgba(51,52,51,0.02) 50%, rgba(51,52,51,0.02) 82%, #FFF 82%);
+}
+
+.line {
+    display: block;
+}
+
+.line > p {
+    position: relative;
+    display: inline-block;
+}
+
+.line > p:after {
+    content: "";
+    position: absolute;
+    top: 60%;
+    width: 2rem;
+    height: 2px;
+    background: #333433;
+}
+
+.line > p:after {
+    left: 100%;
+    margin-left: 15px;
+}
