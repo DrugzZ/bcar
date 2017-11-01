@@ -7,8 +7,12 @@
 }
 
 .home-promo-block {
-	height:calc(100vh - 126px);
+	min-height:calc(100vh - 126px);
 	background: linear-gradient(to left bottom, #FFF 50%, rgba(51,52,51,0.02) 50%, rgba(51,52,51,0.02) 82%, #FFF 82%);
+}
+
+.home-promo-block-info {
+    text-align: justify;
 }
 
 .line {
