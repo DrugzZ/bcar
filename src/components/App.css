@@ -8,7 +8,7 @@
 
 .home-promo-block {
 	min-height:calc(100vh - 126px);
-	background: linear-gradient(to left bottom, #FFF 50%, rgba(51,52,51,0.02) 50%, rgba(51,52,51,0.02) 82%, #FFF 82%);
+	background: linear-gradient(to left bottom, #FFF 50%, rgba(51,52,51,0.05) 50%, rgba(51,52,51,0.05) 82%, #FFF 82%);
 }
 
 .home-promo-block-info {
@@ -36,4 +36,9 @@
 .line > p:after {
     left: 100%;
     margin-left: 15px;
+}
+
+.home-partners-block {
+    background: rgba(51,52,51,0.05);
+    min-height: 500px;
 }
