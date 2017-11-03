@@ -31,9 +31,17 @@ const Home = () => (
 		</section>
 		<section className="home-partners-block">
 			<div className="container">
-				<div className="home-partners-block-heading py-5">
+				<div className="home-partners-block-heading pt-5 pb-3">
 					<h3>Продукция</h3>
 					<p className="text-muted">Мы предлгаеам продукцию следующих производителей</p>
+				</div>
+				<div className="row">
+					<div className="col-md-3 home-partners-single">
+						<div className="home-partners-single-img mb-2">
+
+						</div>
+						<p className="home-partners-single-txt">Балканкар РЕКОРД</p>
+					</div>
 				</div>
 			</div>
 		</section>
