@@ -42,6 +42,24 @@ const Home = () => (
 						</div>
 						<p className="home-partners-single-txt">Балканкар РЕКОРД</p>
 					</div>
+					<div className="col-md-3 home-partners-single">
+						<div className="home-partners-single-img mb-2">
+
+						</div>
+						<p className="home-partners-single-txt">Элпром Троян</p>
+					</div>
+					<div className="col-md-3 home-partners-single">
+						<div className="home-partners-single-img mb-2">
+
+						</div>
+						<p className="home-partners-single-txt">EnSol Technology</p>
+					</div>
+					<div className="col-md-3 home-partners-single">
+						<div className="home-partners-single-img mb-2">
+
+						</div>
+						<p className="home-partners-single-txt">Элхим-Искра</p>
+					</div>
 				</div>
 			</div>
 		</section>
