@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { src, preview } from '../assets/record_2e.png';
+import { src, trace } from '../assets/record_2e.png';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import ProgressiveImage from 'react-progressive-image';
 
 const Home = () => (
 	<div className="wrap">
@@ -26,7 +27,9 @@ const Home = () => (
 					</div>
 				</div>
 				<div className="col-sm-8">
-					<img src={src} className="img-fluid" alt="Автопогрузчик Balkancar Record 2E" />
+					<ProgressiveImage src={src} placeholder={trace}>
+						{(src) => <img src={src} className="img-fluid" alt="Автопогрузчик Balkancar Record 2E" />}
+					</ProgressiveImage>
 				</div>
 			</div>
 		</section>
