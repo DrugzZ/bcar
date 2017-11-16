@@ -1,3 +1,19 @@
+ul {
+  list-style: none;
+  padding: 0; }
+
+.a--styled {
+  color: #F25F5C;
+  font-weight: 500;
+  text-decoration: none !important;
+  border-bottom: 1px solid rgba(242, 95, 92, 0.7);
+  word-break: break-all; }
+
+.home-partners-single-content > a:visited,
+.home-partners-single-content > a:hover,
+.home-partners-single-content > a:active {
+  color: #ee312d; }
+
 /*!
  * Bootstrap v4.0.0-beta.2 (https://getbootstrap.com)
  * Copyright 2011-2017 The Bootstrap Authors
