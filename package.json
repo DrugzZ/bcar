@@ -23,6 +23,7 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "image-trace-loader": "0.0.2"
+    "image-trace-loader": "0.0.2",
+    "image-webpack-loader": "3.4.2"
   }
 }

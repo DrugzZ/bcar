@@ -10,7 +10,7 @@ function ToggleBtn() {
   }
 
   return (
-    <button className="navbar-toggler" type="button" onClick={handleClick}>
+    <button className="navbar-toggler" type="button" onClick={handleClick} aria-label="Навигация">
 		<span className="navbar-toggler-icon"></span>
 	</button>
   );

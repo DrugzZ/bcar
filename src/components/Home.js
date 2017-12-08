@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { src, trace } from '../assets/record_2e.png';
+import { src as record_2e_img, trace as record_2e_trace} from '../assets/record_2e.png';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import ProgressiveImage from 'react-progressive-image';
 
@@ -8,14 +8,14 @@ const Home = () => (
 	<div className="wrap">
 		<section className="home-promo-block d-flex align-items-center text-left container-fluid">
 			<div className="row d-flex justify-content-center">
-				<div className="col-sm-4 d-flex align-items-center">
+				<div className="col-md-6 d-flex align-items-center">
 					<div className="home-promo-block-cont">
 						<div className="line">
 							<p className="h4">
 								Представительство
 							</p>
 						</div>
-						<h1 className="font-weight-bold mb-4 text-nowrap">
+						<h1 className="font-weight-bold mb-4">
 							Балканкар РЕКОРД
 						</h1>
 						<p className="mb-4 home-promo-block-info">
@@ -26,8 +26,8 @@ const Home = () => (
 						<Link to="/production" className="btn btn-danger">Подробнее</Link>
 					</div>
 				</div>
-				<div className="col-sm-8">
-					<ProgressiveImage src={src} placeholder={trace}>
+				<div className="col-md-6">
+					<ProgressiveImage src={record_2e_img} placeholder={record_2e_trace}>
 						{(src) => <img src={src} className="img-fluid" alt="Автопогрузчик Balkancar Record 2E" />}
 					</ProgressiveImage>
 				</div>
