@@ -1,15 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { src as record_2e_img, trace as record_2e_trace} from '../assets/record_2e.png';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import ProgressiveImage from 'react-progressive-image';
+import header_img from '../assets/home_header_img.svg';
+import header_img_thumb from '../assets/home_header_img_thumb.svg';
+import ProgressiveImage from "react-progressive-image";
 
 const Home = () => (
 	<div className="wrap">
 		<section className="home-promo-block d-flex align-items-center text-left container-fluid">
 			<div className="row d-flex justify-content-center">
-				<div className="col-md-6 d-flex align-items-center">
-					<div className="home-promo-block-cont">
+				<div className="col-md-6 d-flex flex-column align-items-center">
+					<div className="home-promo-block-cont ml-5 mb-5">
 						<div className="line">
 							<p className="h4">
 								Представительство
@@ -25,11 +26,13 @@ const Home = () => (
 						</p>
 						<Link to="/production" className="btn btn-danger">Подробнее</Link>
 					</div>
+					<ProgressiveImage src={header_img} placeholder={header_img_thumb} >
+					  {(src) => <img src={src} alt="" className="mb-5 ml-5"/>}
+					</ProgressiveImage>
+
 				</div>
 				<div className="col-md-6">
-					<ProgressiveImage src={record_2e_img} placeholder={record_2e_trace}>
-						{(src) => <img src={src} className="img-fluid" alt="Автопогрузчик Balkancar Record 2E" />}
-					</ProgressiveImage>
+
 				</div>
 			</div>
 		</section>
