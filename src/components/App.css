@@ -1,6 +1,11 @@
 .App {
   text-align: center; }
 
+.header-paper {
+  margin: 1rem 3rem 0 8rem;
+  min-height: 50vh;
+  padding: 1rem; }
+
 .App-logo {
   height: 60px; }
 

@@ -4,6 +4,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import header_img from '../assets/home_header_img.svg';
 import header_img_thumb from '../assets/home_header_img_thumb.svg';
 import ProgressiveImage from "react-progressive-image";
+import Paper from 'material-ui/Paper';
 
 const Home = () => (
 	<div className="wrap">
@@ -32,7 +33,11 @@ const Home = () => (
 
 				</div>
 				<div className="col-md-6">
-
+					<Paper className="header-paper" elevation={7}>
+				        <p>
+				          This is a sheet of paper.
+				        </p>
+				     </Paper>
 				</div>
 			</div>
 		</section>
