@@ -3,15 +3,16 @@ import { Link } from 'react-router-dom';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import header_img from '../assets/home_header_img.svg';
 import header_img_thumb from '../assets/home_header_img_thumb.svg';
+import header_img2 from '../assets/home_header_rt.svg';
+import header_img2_thumb from '../assets/home_header_rt_thumb.svg';
 import ProgressiveImage from "react-progressive-image";
-import Paper from 'material-ui/Paper';
 
 const Home = () => (
 	<div className="wrap">
-		<section className="home-promo-block d-flex align-items-center text-left container-fluid">
-			<div className="row d-flex justify-content-center">
-				<div className="col-md-6 d-flex flex-column align-items-center">
-					<div className="home-promo-block-cont ml-5 mb-5">
+		<section className="home-promo-block container pt-5">
+			<div className="row d-flex align-items-end">
+				<div className="col-md-6 text-left">
+					<div className="home-promo-block-cont mb-5">
 						<div className="line">
 							<p className="h4">
 								Представительство
@@ -20,24 +21,15 @@ const Home = () => (
 						<h1 className="font-weight-bold mb-4">
 							Балканкар РЕКОРД
 						</h1>
-						<p className="mb-4 home-promo-block-info">
-						Новая линейка экологичных автопогрузчиков RECORD 2E. 
-						Погрузчики данной серии воплощают в себе ряд новейших
-						достижений компании Балканкар РЕКОРД. 
-						</p>
-						<Link to="/production" className="btn btn-danger">Подробнее</Link>
 					</div>
 					<ProgressiveImage src={header_img} placeholder={header_img_thumb} >
-					  {(src) => <img src={src} alt="" className="mb-5 ml-5"/>}
+						{(src) => <img src={src} alt="" className="img-responsive header_imga" />}
 					</ProgressiveImage>
-
 				</div>
-				<div className="col-md-6">
-					<Paper className="header-paper" elevation={7}>
-				        <p>
-				          This is a sheet of paper.
-				        </p>
-				     </Paper>
+				<div className="col-md-6 text-right">
+					<ProgressiveImage src={header_img2} placeholder={header_img2_thumb} >
+						{(src) => <img src={src} alt="" className="img-responsive header_imga2" />}
+					</ProgressiveImage>
 				</div>
 			</div>
 		</section>
