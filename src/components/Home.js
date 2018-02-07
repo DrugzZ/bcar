@@ -5,31 +5,47 @@ import header_img from '../assets/home_header_img.svg';
 import header_img_thumb from '../assets/home_header_img_thumb.svg';
 import header_img2 from '../assets/home_header_rt.svg';
 import header_img2_thumb from '../assets/home_header_rt_thumb.svg';
-import ProgressiveImage from "react-progressive-image";
+import ProgressiveImage from 'react-progressive-image';
+import headingFont from '../assets/ALSMeringue.otf'
 
 const Home = () => (
 	<div className="wrap">
-		<section className="home-promo-block container pt-5">
+		<div className="bg-color">
+		<section className="home-promo-block container pb-5">
 			<div className="row d-flex align-items-end">
 				<div className="col-md-6 text-left">
-					<div className="home-promo-block-cont mb-5">
+					<div className="home-promo-block-cont">
 						<div className="line">
-							<p className="h4">
+							<p className="h2 fancy-font font-weight-bold">
 								Представительство
 							</p>
 						</div>
-						<h1 className="font-weight-bold mb-4">
+						<h1 className="font-weight-bold mb-4 fancy-font main-heading">
 							Балканкар РЕКОРД
 						</h1>
+						<p className="desc-text">
+							Наша компания осуществляет продажу подъемно-транспортной техники марки Балканкар 
+							(Balkancar). Вилочные погрузчики, электротележки, электрокары и тягачи. 
+							А также выполняет ремонт и поставляет запчасти, аккумуляторные батареи 
+							и разнообразное навесное оборудование для погрузчиков и другой техники.
+						</p>
 					</div>
 					<ProgressiveImage src={header_img} placeholder={header_img_thumb} >
-						{(src) => <img src={src} alt="" className="img-responsive header_imga" />}
+						{(src) => <img src={src} alt="" className="img-responsive header_imga float-right" />}
 					</ProgressiveImage>
 				</div>
-				<div className="col-md-6 text-right">
+				<div className="col-md-6">
 					<ProgressiveImage src={header_img2} placeholder={header_img2_thumb} >
-						{(src) => <img src={src} alt="" className="img-responsive header_imga2" />}
+						{(src) => <img src={src} alt="" className="img-responsive header_imga2 float-right" />}
 					</ProgressiveImage>
+				</div>
+			</div>
+		</section>
+		</div>
+		<section className="home-promo-block container">
+			<div className="row">
+				<div className="home-products-block">
+					
 				</div>
 			</div>
 		</section>
@@ -90,6 +106,15 @@ const Home = () => (
 					</TabPanel>
 				</div>
 				</Tabs>
+			</div>
+		</section>
+		<section className="container">
+			<div className="row">
+				<div className="col-md-6">
+				</div>
+				<div className="col-md-6">
+					
+				</div>
 			</div>
 		</section>
 	</div>

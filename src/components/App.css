@@ -1,3 +1,10 @@
+.fancy-font {
+  font-family: Meringue; }
+
+.desc-text {
+  font-weight: 300;
+  color: black; }
+
 .App {
   text-align: center; }
 
@@ -5,13 +12,25 @@
   height: 60px; }
 
 .wrap {
-  background: #F8F8F8; }
+  background: #FcFcFc; }
+
+.main-heading {
+  font-size: 3rem; }
+
+.bg-color {
+  background: linear-gradient(transparent 85%, #FcFcFc 85%), radial-gradient(at bottom, #f8f8f8 0%, #f8f8f8 55%, #fcfcfc 55%, #fcfcfc 65%, white 65%), radial-gradient(at bottom, #fcfcfc 0%, #fcfcfc 65%, white 65%); }
 
 .header_imga {
-  width: 95%; }
+  width: 85%; }
 
 .header_imga2 {
-  width: 80%; }
+  width: 75%; }
+
+.home-promo-block {
+  padding-top: 5rem; }
+
+.home-promo-block-cont {
+  margin-bottom: 5rem; }
 
 .home-promo-block-info {
   word-break: word-break;
