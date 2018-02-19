@@ -1,103 +1,205 @@
 $dark:                              #333433;
-$yellow:                            #FFE066;
+$yellow:                            #F4C430;
 $red:                               #F25F5C;
 $blue:                              #247BA0;
-$teal:                              #70C1B3;
+$teal:                              #74B8BB;
+$green:                             #9BC53D;
+$text-light:                        #fcfcfc;
 
-$text-color: $dark;
+$link-color: $text-light;
+
+@import "node_modules/bootstrap/scss/bootstrap";
+
+html {
+  font-size: 0.8rem;
+
+}
+
+body {
+  color: $text-light;
+  letter-spacing: 0.7px;
+}
+
+.list-unstyled > li {
+  line-height: 2rem;
+    >a {
+    padding-left: 1rem;
+    letter-spacing: 1.2px;
+    font-weight: 300;
+      &:hover{
+        text-decoration: none;
+      }
+  }
+}
+
+
+.a--styled{
+    color: $red;
+    text-decoration: none !important;
+    border-bottom: 1px solid rgba( $red, .4 );
+}
 
 .fancy-font {
     font-family: Meringue;
 }
 
-.desc-text {
-    font-weight: 300; 
-    color: black;
-}
-
-.App {
-  text-align: center; }
-
 .App-logo {
-  height: 60px; }
+  height: 50px; }
 
 .wrap {
   background: #FcFcFc; }
 
-.main-heading {
-  font-size: 3rem; }
+.topbar-nav {
+  font-size: .9rem;
+  font-weight: 400;
+    >*{
+      padding: .5rem; }
+    >*:hover {
+        cursor: default;
+    }
+}
 
-.bg-color {
-  background: linear-gradient(transparent 85%, #FcFcFc 85%), radial-gradient(at bottom, #f8f8f8 0%, #f8f8f8 55%, #fcfcfc 55%, #fcfcfc 65%, white 65%), radial-gradient(at bottom, #fcfcfc 0%, #fcfcfc 65%, white 65%);}
-
-.header_imga {
-  width: 85%;}
-
-.header_imga2 {
-  width: 75%;}
-
-.home-promo-block {
-  padding-top: 5rem;}
-
-.home-promo-block-cont {
-  margin-bottom: 5rem;}
-
-.home-promo-block-info {
-  word-break: word-break;
-  hyphens: auto; }
-
-.home-partners-single {
-  cursor: pointer; }
-
-.home-partners-single-img {
-  background: #fff;
-  min-height: 10rem;
-  transition: opacity .15s ease-out,box-shadow .15s ease-out,transform .15s ease-out,-webkit-transform .15s ease-out; }
-
-.home-partners-single:hover .home-partners-single-img,
-.home-partners-single--selected .home-partners-single-img {
+.s1-wrap {
   z-index: 1;
-  box-shadow: 0 22px 50px rgba(14, 21, 47, 0.1), 0 8px 20px rgba(14, 21, 47, 0.1);
-  transform: scale(1.05);
-  opacity: 1; }
+  overflow: hidden;
+  &:before {
+    background: linear-gradient(rgba($dark,0.9), rgba($dark,0.9)),
+    url(https://scontent-frx5-1.xx.fbcdn.net/v/t1.0-9/1014274_523667927681422_192679621_n.jpg?oh=d14a460d1357ea312219309dc827a3f2&oe=5B1981C9);
+    background-size: cover;
+    background-position: center bottom;
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    width: 101%;
+    height: 101%;
+    transition: all .2s ease-out;
+  }
+  &:hover:before {
+      transform: scale(1.05); 
+  }
+}
 
-.home-partners-single-txt {
-  color: #868e96;
-  transition: color .15s ease-out;
-  word-break: break-all; }
+.s2-wrap {
+  z-index: 1;
+  overflow: hidden;
+  &:before {
+    background: linear-gradient(rgba($blue,0.9), rgba($blue,0.9)),
+    url(https://image.shutterstock.com/z/stock-photo-close-up-of-a-factory-overhead-crane-81895900.jpg);
+    background-size: cover;
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition: all .2s ease-out;
+  }
+  &:hover:before {
+      transform: scale(1.05); 
+  }
+}
 
-.home-partners-single:hover .home-partners-single-txt,
-.home-partners-single--selected .home-partners-single-txt {
-  color: #555b61; }
+.s3-wrap {
+  z-index: 1;
+  overflow: hidden;
+  &:before {
+    background: linear-gradient(rgba($red,0.9), rgba($red,0.9)),
+    url(../assets/bg_panel3.jpg);
+    background-size: cover;
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition: all .2s ease-out;
+  }
+  &:hover:before {
+      transform: scale(1.05); 
+  }
+}
 
-.navbar-toggler {
-  outline: none !important; }
+.s4-wrap {
+  z-index: 1;
+  overflow: hidden;
+  &:before {
+    background: linear-gradient(rgba($dark,0.9), rgba($dark,0.9)),
+    url(https://image.shutterstock.com/z/stock-photo--moto-troops-electric-motors-41488657.jpg);
+    background-size: cover;
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition: all .2s ease-out;
+  }
+  &:hover:before {
+      transform: scale(1.05); 
+  }
+}
 
-.line {
-  display: block; }
+.s5-wrap {
+  z-index: 1;
+  overflow: hidden;
+  &:before {
+    background: linear-gradient(rgba($dark,0.9), rgba($dark,0.9)),
+    url(../assets/bg_panel1.jpg);
+    background-size: cover;
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition: all .2s ease-out;
+  }
+  &:hover:before {
+      transform: scale(1.05); 
+  }
+}
 
-.line > p {
-  position: relative;
-  display: inline-block; }
+.s6-wrap {
+  z-index: 1;
+  overflow: hidden;
+  &:before {
+    background: linear-gradient(rgba($yellow,0.9), rgba($yellow,0.9)),
+    url(../assets/bg_panel1.jpg);
+    background-size: cover;
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition: all .2s ease-out;
+  }
+  &:hover:before {
+      transform: scale(1.05); 
+  }
+}
 
-.line > p:after {
-  content: "";
-  position: absolute;
-  top: 60%;
-  width: 2rem;
-  height: 2px;
-  background: #333433; }
+@include media-breakpoint-up(sm) {
+  html {
+    font-size: 1rem;
+  }
+}
 
-.line > p:after {
-  left: 100%;
-  margin-left: 15px; }
+@include media-breakpoint-up(md) {
+  html {
+    font-size: 0.8rem;
+  }
+}
 
-.home-partners-block {
-  min-height: 550px; }
-
-.home-partners-single-content {
-  text-align: justify;
-  color: #495057;
-  font-size: 0.875rem;
-  line-height: 1.5rem;
-  letter-spacing: 0.2px; }
+@include media-breakpoint-up(lg) {
+  html {
+    font-size: 1rem;
+  }
+}
