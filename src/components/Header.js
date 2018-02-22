@@ -1,6 +1,5 @@
 import React from 'react';
-// import logo from '../assets/logo3.svg';
-import logo from '../assets/record_logo.png';
+import logo from '../assets/logo2.svg';
 import { Link, NavLink } from 'react-router-dom';
 
 function ToggleBtn() {

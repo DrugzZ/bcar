@@ -5903,6 +5903,12 @@ body {
   .topbar-nav > *:hover {
     cursor: default; }
 
+.s-bg-img {
+  overflow: hidden;
+  z-index: 1; }
+  .s-bg-img:hover > :first-child {
+    transform: scale(1.08); }
+
 .s1-wrap {
   z-index: 1;
   overflow: hidden; }
@@ -5925,7 +5931,7 @@ body {
   z-index: 1;
   overflow: hidden; }
   .s2-wrap:before {
-    background: linear-gradient(rgba(36, 123, 160, 0.9), rgba(36, 123, 160, 0.9)), url(https://image.shutterstock.com/z/stock-photo-close-up-of-a-factory-overhead-crane-81895900.jpg);
+    background: linear-gradient(rgba(36, 123, 160, 0.9), rgba(36, 123, 160, 0.9)), url(../assets/bg_panel2.jpg);
     background-size: cover;
     content: "";
     position: absolute;
@@ -5959,7 +5965,7 @@ body {
   z-index: 1;
   overflow: hidden; }
   .s4-wrap:before {
-    background: linear-gradient(rgba(51, 52, 51, 0.9), rgba(51, 52, 51, 0.9)), url(https://image.shutterstock.com/z/stock-photo--moto-troops-electric-motors-41488657.jpg);
+    background: linear-gradient(rgba(51, 52, 51, 0.9), rgba(51, 52, 51, 0.9)), url(../assets/bg_panel3.jpg);
     background-size: cover;
     content: "";
     position: absolute;

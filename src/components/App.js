@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Header from './Header';
-import TopBar from './TopBar';
 import Main from './Main';
 import './App.css';
 
