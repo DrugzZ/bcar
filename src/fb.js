@@ -1,5 +1,5 @@
 import firebase from 'firebase'
-import firestore from 'firebase/firestore'
+import firestore from 'firebase/firestore';
 const config = {
     apiKey: "AIzaSyA8Gh-uupDNP1PJ_bLSfxm7U3Hp4X1ng1A",
     authDomain: "bcar-a613d.firebaseapp.com",
@@ -10,9 +10,6 @@ const config = {
 };
 const fb = firebase.initializeApp(config);
 
-firebase.firestore().enablePersistence();
-
 const db = firebase.firestore();
 
-export default fb;
 export {db, }

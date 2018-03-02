@@ -3,13 +3,15 @@ import {Switch, Route} from 'react-router-dom';
 import Home from './Home';
 import About from './About';
 import Production from './Production';
+import ProdCategory from './ProdCategory';
 
 const Main = () => (
 	<main>
 	    <Switch>
 			<Route exact path='/' component={Home}/>
 			<Route path='/about' component={About}/>
-			<Route path='/production' component={Production}/>
+			<Route exact path='/продукция' component={Production}/>
+			<Route path='/продукция/:groupName' component={ProdCategory} />
 	    </Switch>
 	</main>
 );

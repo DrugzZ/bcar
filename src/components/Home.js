@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import ProgressiveImage from 'react-progressive-bg-image';
 import bg_panel_1_lg from '../assets/bg_panel_1--lg.jpg';
 import bg_panel_1_xxs from '../assets/bg_panel_1--xxs.jpg';
-import fb, {db} from '../fb';
+import { db } from '../fb';
 
 const StyledPImg = styled(ProgressiveImage)`
     background-size: cover;
@@ -35,15 +35,23 @@ class Home extends Component {
         isLoading: true,
         error: null,
       };
+
     }	
 
 	componentDidMount() {
+		const cached = localStorage.getItem('cached');
+	    if (cached) {
+	      this.setState({ data: JSON.parse(cached), isLoading: false });
+	      return;
+	    }
 
-	    let groupsRef = db.collection("machines").doc("groups");
+		let groupsRef = db.collection("machines").doc("groups");
 
-		groupsRef.get().then(doc => this.setState({data: doc.data(), isLoading: false}))
-        .catch(error => this.setState({error, isLoading: false}));
-
+		groupsRef.get().then(doc => {
+			localStorage.setItem('cached', JSON.stringify(doc.data()))
+			this.setState({data: doc.data(), isLoading: false});
+			})
+		.catch(error => this.setState({error, isLoading: false}));
   	}
 
 	render() {
@@ -62,8 +70,7 @@ class Home extends Component {
 							/>
 							<ul className="list-unstyled">
 							  <p className="h2">{this.state.data.groupName}</p>
-							  {this.state.isLoading ? '' : this.state.data.types.map((type, index) => <li key={index}><Link className="h5" to="/production">{type}</Link></li>)}
-
+							  {this.state.isLoading ? '' : this.state.data.types.map((type, index) => <li key={index}><Link className="h5" to={`/продукция/${type.replace(' ', '-').toLowerCase()}`}>{type}</Link></li>)}							  
 							</ul>
 						</div>
 						<div className="col-md-6 s2-wrap py-5 pl-5">

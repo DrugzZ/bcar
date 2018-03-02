@@ -33,7 +33,7 @@ const Header = () => (
 					<div className="d-flex justify-content-end">
 					<NavLink exact activeClassName="active" className="nav-link d-inline-block " to="/">Главная</NavLink>
 					<NavLink activeClassName="active" className="nav-link d-inline-block" to="/about">О нас</NavLink>
-					<NavLink activeClassName="active" className="nav-link d-inline-block" to="/production">Продукция</NavLink>
+					<NavLink activeClassName="active" className="nav-link d-inline-block" to="/продукция">Продукция</NavLink>
 					</div>
 				</div>
 			</div>
