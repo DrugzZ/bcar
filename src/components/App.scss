@@ -62,6 +62,9 @@ body {
 .s-bg-img {
   overflow: hidden;
   z-index: 1;
+  > *:first-letter, ul > li:first-letter {
+    text-transform: uppercase;
+  }
   &:hover {
     >:first-child{
         transform: scale(1.08);

@@ -68,8 +68,8 @@ class Home extends Component {
 							  transition=".3s filter"
 							  scale={1.03}
 							/>
+							<p className="h2">{this.state.data.section}</p>
 							<ul className="list-unstyled">
-							  <p className="h2">{this.state.data.groupName}</p>
 							  {this.state.isLoading ? '' : this.state.data.types.map((type, index) => <li key={index}><Link className="h5" to={`/продукция/${type.replace(' ', '-').toLowerCase()}`}>{type}</Link></li>)}							  
 							</ul>
 						</div>

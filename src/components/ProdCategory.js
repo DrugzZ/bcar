@@ -12,13 +12,13 @@ class ProdCategory extends Component {
   }
 
   componentDidMount() {
-	const cached = localStorage.getItem(this.props.match.params.groupName.replace('-', ' '));
+	const cached = localStorage.getItem(this.props.match.params.subgroup);
     if (cached) {
       this.setState({ data: JSON.parse(cached), isLoading: false });
       return;
     }
 
-	let machRef = db.collection("machines").where("group", "==", this.props.match.params.groupName.replace('-', ' '));
+	let machRef = db.collection("machines").where("subgroup", "==", this.props.match.params.subgroup);
 
 	machRef.get()
 		.then(function(querySnapshot) {
@@ -26,7 +26,7 @@ class ProdCategory extends Component {
         	querySnapshot.forEach(doc => {
 				docs.push(doc.data())
 			})
-			localStorage.setItem(this.props.match.params.groupName.replace('-', ' '), JSON.stringify(docs))
+			localStorage.setItem(this.props.match.params.subgroup, JSON.stringify(docs))
 			this.setState({data: docs, isLoading: false});
     	}.bind(this))
 		.catch(error => this.setState({error, isLoading: false}));
@@ -35,7 +35,7 @@ class ProdCategory extends Component {
   render() { 
 		return (
 			<div className="text-dark">
-				<h3>{this.state.isLoading ? '' : this.state.data.map((mach, index) => <p key={index}>{mach.model.toUpperCase()}</p>)}</h3>
+				<h3>{this.state.isLoading ? '' : this.state.data.map((mach, index) => <div key={index}><p>{mach.model.toUpperCase()}</p><p>{`${mach.specs.loadCapacity.name} - ${mach.specs.loadCapacity.value}`}</p></div>)}</h3>
 			</div>
 		)	
 	}

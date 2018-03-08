@@ -5906,6 +5906,8 @@ body {
 .s-bg-img {
   overflow: hidden;
   z-index: 1; }
+  .s-bg-img > *:first-letter, .s-bg-img ul > li:first-letter {
+    text-transform: uppercase; }
   .s-bg-img:hover > :first-child {
     transform: scale(1.08); }
 
