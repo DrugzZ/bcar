@@ -1,42 +1,16 @@
 import React, {Component} from 'react';
-import { Link } from 'react-router-dom';
-import { db } from '../fb';
+import { NavLink } from 'react-router-dom';
 
-class ProdSubMenu extends Component {
-	constructor(props) {
-    super(props);
-    this.state = {
-    	data: {},
-        isLoading: true,
-        error: null,
-    };
-  }
+const ProdSubMenu = (props) => (
+	<div className="container-fluid px-0 bg-white mb-5 submenu">
+		<ul className="nav justify-content-center text-uppercase">
+			{props.data.types.map((type, index) => <li key={index} className="nav-item">
+			    	<NavLink activeClassName="submenu--active" className="nav-link py-4" to={`/${type.replace(' ', '-').toLowerCase()}`}>{type}</NavLink>
+			</li>)}
+		</ul>
+	</div>
+);
 
-  componentDidMount() {  	
-	const cached = localStorage.getItem('cached');
-    if (cached) {
-      this.setState({ data: JSON.parse(cached), isLoading: false });
-      return;
-    }
 
-	let groupsRef = db.collection("machines").doc("groups");
-
-	groupsRef.get().then(doc => {
-		localStorage.setItem('cached', JSON.stringify(doc.data()))
-		this.setState({data: doc.data(), isLoading: false});
-		})
-	.catch(error => this.setState({error, isLoading: false}));
-  }
-
-  render() { 
-		return (
-			<ul className="nav justify-content-center bg-dark">
-				{this.state.isLoading ? '' : this.state.data.types.map((type, index) => <li key={index} className="nav-item">
-			    	<Link className="nav-link" to={`${this.props.match.url}/${type.replace(' ', '-').toLowerCase()}`}>{type}</Link>
-			  	</li>)}
-			</ul>
-		)	
-	}
-}
 
 export default ProdSubMenu;

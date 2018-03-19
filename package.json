@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "bootstrap": "4.0.0-beta.2",
+    "cloudinary-react": "1.0.6",
     "firebase": "4.10.1",
     "node-sass-chokidar": "0.0.3",
     "npm-run-all": "4.1.1",
@@ -12,7 +13,9 @@
     "react-progressive-bg-image": "3.0.0",
     "react-router-dom": "4.2.2",
     "react-scripts": "1.0.14",
-    "styled-components": "3.1.6"
+    "react-swipe": "5.1.1",
+    "styled-components": "3.1.6",
+    "swipe-js-iso": "2.0.4"
   },
   "scripts": {
     "build-css": "node-sass-chokidar src/ -o src/",

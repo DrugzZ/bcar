@@ -1,10 +1,9 @@
-import React, {Component} from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import ProgressiveImage from 'react-progressive-bg-image';
 import bg_panel_1_lg from '../assets/bg_panel_1--lg.jpg';
 import bg_panel_1_xxs from '../assets/bg_panel_1--xxs.jpg';
-import { db } from '../fb';
 
 const StyledPImg = styled(ProgressiveImage)`
     background-size: cover;
@@ -27,36 +26,8 @@ const StyledPImg = styled(ProgressiveImage)`
   }
 `;
 
-class Home extends Component {
-    constructor() {
-      super();
-      this.state = {
-        data: {},
-        isLoading: true,
-        error: null,
-      };
-
-    }	
-
-	componentDidMount() {
-		const cached = localStorage.getItem('cached');
-	    if (cached) {
-	      this.setState({ data: JSON.parse(cached), isLoading: false });
-	      return;
-	    }
-
-		let groupsRef = db.collection("machines").doc("groups");
-
-		groupsRef.get().then(doc => {
-			localStorage.setItem('cached', JSON.stringify(doc.data()))
-			this.setState({data: doc.data(), isLoading: false});
-			})
-		.catch(error => this.setState({error, isLoading: false}));
-  	}
-
-	render() {
-		return (
-			<div className="wrap">
+const Home = ({data, isLoading, error, location, history, match}) => (
+	<div className="wrap">
 				<section className="container-fluid">
 					<div className="row">
 						<div className="col-md-6 s-bg-img py-5 pl-5">
@@ -68,9 +39,9 @@ class Home extends Component {
 							  transition=".3s filter"
 							  scale={1.03}
 							/>
-							<p className="h2">{this.state.data.section}</p>
+							<p className="h2">{data.section}</p>
 							<ul className="list-unstyled">
-							  {this.state.isLoading ? '' : this.state.data.types.map((type, index) => <li key={index}><Link className="h5" to={`/продукция/${type.replace(' ', '-').toLowerCase()}`}>{type}</Link></li>)}							  
+							  {isLoading ? '' : data.types.map((type, index) => <li key={index}><Link className="h5" to={`${type.replace(' ', '-').toLowerCase()}`}>{type}</Link></li>)}							  
 							</ul>
 						</div>
 						<div className="col-md-6 s2-wrap py-5 pl-5">
@@ -135,8 +106,8 @@ class Home extends Component {
 					</div>					
 				</section>
 			</div>
-		);
-	}
-}
+);
+
+
 
 export default Home;

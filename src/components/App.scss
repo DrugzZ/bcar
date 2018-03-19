@@ -20,6 +20,16 @@ body {
   letter-spacing: 0.7px;
 }
 
+.b-sh {
+  box-shadow:0 2px 5px rgba(0,0,0,0.08);
+}
+
+.simple-txt{
+  letter-spacing: 0;
+  font-size: 0.9rem;
+  color: lighten($dark, 10%)
+}
+
 .list-unstyled > li {
   line-height: 2rem;
     >a {
@@ -31,7 +41,6 @@ body {
       }
   }
 }
-
 
 .a--styled{
     color: $red;
@@ -47,7 +56,7 @@ body {
   height: 50px; }
 
 .wrap {
-  background: #FcFcFc; }
+  background: #f8f9fa; }
 
 .topbar-nav {
   font-size: .9rem;
@@ -57,6 +66,43 @@ body {
     >*:hover {
         cursor: default;
     }
+}
+
+.submenu {
+  box-shadow:0 2px 5px rgba(0,0,0,0.08);
+  a{
+    font-weight:500;
+    color: $dark;
+    &:hover{
+      color: lighten($dark, 25%);
+      text-decoration: none!important;
+    }
+  }
+}
+
+.submenu--active {
+  border-bottom: 2px solid $red;
+  color: $red!important;
+}
+
+.subgroup--active {
+  background-color:white;
+  color: lighten($dark, 25%)!important;
+}
+
+.subgroup--submenu {
+  a{
+    font-weight:500;
+    color: $dark;
+    &:hover{
+      color: lighten($dark, 25%);
+      text-decoration: none!important;
+    }
+  }
+}
+
+.subgroup--picframe {
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
 }
 
 .s-bg-img {
@@ -196,6 +242,24 @@ body {
   }
   &:hover:before {
       transform: scale(1.05); 
+  }
+}
+
+.Categories--single-cat {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.02), 0 3px 6px rgba(0,0,0,0.08);
+  p {
+    line-height: 1.5rem;
+  }
+}
+
+.Categories--specs{
+  img{
+      width: 1.5rem;
+      height: 1.5rem;
+  }
+  span{
+    font-size: 1.2rem;
+    letter-spacing: 0;
   }
 }
 

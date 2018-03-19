@@ -4,12 +4,12 @@ import Home from './Home';
 import About from './About';
 import Production from './Production';
 
-const Main = () => (
+const Main = ({data, isLoading, error}) => (
 	<main>
 	    <Switch>
-			<Route exact path='/' component={Home}/>
+			<Route exact path='/' component={props => (<Home {...props} data={data} isLoading={isLoading} error={error} />)}/>
+			<Route path='/:group' component={props => (<Production {...props} data={data} isLoading={isLoading} error={error} />)}/>
 			<Route path='/about' component={About}/>
-			<Route path='/продукция' component={Production}/>
 	    </Switch>
 	</main>
 );
