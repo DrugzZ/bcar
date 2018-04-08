@@ -70,9 +70,17 @@ body {
 
 .submenu {
   box-shadow:0 2px 5px rgba(0,0,0,0.08);
+    overflow: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  &::-webkit-scrollbar{
+    display:none;
+  }
   a{
     font-weight:500;
     color: $dark;
+    padding: 0.5rem 1rem;
     &:hover{
       color: lighten($dark, 25%);
       text-decoration: none!important;
@@ -87,15 +95,22 @@ body {
 
 .subgroup--active {
   background-color:white;
-  color: lighten($dark, 25%)!important;
+  color: $dark!important;
 }
 
 .subgroup--submenu {
+    overflow: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  &::-webkit-scrollbar{
+    display:none;
+  }
   a{
     font-weight:500;
-    color: $dark;
+    color: lighten($dark, 25%);
     &:hover{
-      color: lighten($dark, 25%);
+      color: $dark;
       text-decoration: none!important;
     }
   }

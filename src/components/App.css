@@ -5912,10 +5912,17 @@ body {
     cursor: default; }
 
 .submenu {
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08); }
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  overflow: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar; }
+  .submenu::-webkit-scrollbar {
+    display: none; }
   .submenu a {
     font-weight: 500;
-    color: #333433; }
+    color: #333433;
+    padding: 0.5rem 1rem; }
     .submenu a:hover {
       color: #727472;
       text-decoration: none !important; }
@@ -5926,14 +5933,21 @@ body {
 
 .subgroup--active {
   background-color: white;
-  color: #727472 !important; }
+  color: #333433 !important; }
 
-.subgroup--submenu a {
-  font-weight: 500;
-  color: #333433; }
-  .subgroup--submenu a:hover {
-    color: #727472;
-    text-decoration: none !important; }
+.subgroup--submenu {
+  overflow: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar; }
+  .subgroup--submenu::-webkit-scrollbar {
+    display: none; }
+  .subgroup--submenu a {
+    font-weight: 500;
+    color: #727472; }
+    .subgroup--submenu a:hover {
+      color: #333433;
+      text-decoration: none !important; }
 
 .subgroup--picframe {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08); }

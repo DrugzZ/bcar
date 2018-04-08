@@ -19,7 +19,7 @@ function ToggleBtn() {
 const Header = () => (
 	<header className="sticky-top">
 		<nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-			<Link exact className="navbar-brand" to="/"> 
+			<Link className="navbar-brand" to="/"> 
 				<img src={logo} className="App-logo" alt="logo" />
 			</Link>
 			<ToggleBtn />

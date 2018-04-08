@@ -2,13 +2,10 @@ import React, {Component} from 'react';
 import { NavLink } from 'react-router-dom';
 
 const ProdSubMenu = (props) => (
-	<div className="container-fluid px-0 bg-white mb-5 submenu">
-		<ul className="nav justify-content-center text-uppercase">
-			{props.data.types.map((type, index) => <li key={index} className="nav-item">
-			    	<NavLink activeClassName="submenu--active" className="nav-link py-4" to={`/${type.replace(' ', '-').toLowerCase()}`}>{type}</NavLink>
-			</li>)}
-		</ul>
-	</div>
+	<nav className="bg-white mb-5 submenu text-uppercase d-flex justify-content-md-center">
+			{props.data.types.map((type, index) => 
+			    	<NavLink key={index} activeClassName="submenu--active" className="d-inline-block py-4" to={`/${type.replace(' ', '-').toLowerCase()}`}>{type}</NavLink>)}
+	</nav>
 );
 
 

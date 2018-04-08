@@ -35,9 +35,11 @@ class App extends Component {
     return (
     <div className="App">
         {isLoading
-        	 ? ''
-        	 : <div><Header /><Main data={data} isLoading={isLoading} error={error}/>
-        	 	</div>
+        	 ? <p className="text-dark">Loading...</p>
+        	 : <React.Fragment>
+        	 		<Header />
+        	 		<Main data={data}/>
+        	   </React.Fragment>
         }
     </div>
     );

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Route, Switch } from 'react-router-dom';
-import ProdCategories from './ProdCategories';
+import Categories from './Categories';
 import ProdCategory from './ProdCategory';
 import ProdSubMenu from './ProdSubMenu';
 import { db } from '../fb';
@@ -16,14 +16,25 @@ class Production extends Component {
     };
   }
 
-  componentDidMount() {  	
-	const cached = localStorage.getItem(this.props.match.params.group.replace('-', ' '));
+  componentDidMount() {
+  	this.getData(this.props.match.params.group);  	
+
+  }
+
+  componentDidUpdate(prevProps) {
+	if (this.props.match.params.group !== prevProps.match.params.group) {      
+		this.getData(this.props.match.params.group);
+	}
+  }
+
+  getData(group) {
+	const cached = localStorage.getItem(group.replace('-', ' '));
 	    if (cached) {
 	      this.setState({ data: JSON.parse(cached), isLoading: false});
 	      return;
 	    }
 
-	let machRef = db.collection("machines").doc("groups").collection("subgroups").where("childOf", "==", this.props.match.params.group.replace('-', ' '));
+	let machRef = db.collection("machines").doc("groups").collection("subgroups").where("childOf", "==", group.replace('-', ' '));
 
 	machRef.get()
 		.then(function(querySnapshot) {
@@ -31,21 +42,24 @@ class Production extends Component {
         	querySnapshot.forEach(doc => {
 				docs.push(doc.data())
 			})
-			localStorage.setItem(this.props.match.params.group.replace('-', ' '), JSON.stringify(docs))
+			localStorage.setItem(group.replace('-', ' '), JSON.stringify(docs))
 			this.setState({data: docs, isLoading: false});
     	}.bind(this))
-		.catch(error => this.setState({error, isLoading: false}));
+		.catch(error => this.setState({error, isLoading: false}));  	
   }
 
+
   render() {
-  		const {match, data, isLoading, error} = this.props; 
+  		const {match, data} = this.props;
+
+  		if(this.state.isLoading) 
+  			return <p className="text-dark">Loading...</p>
+
 		return (
 			<div className="wrap text-dark">
-				<ProdSubMenu match={match} data={data} isLoading={isLoading} error={error}/>
-				<Switch>
-					<Route path={`${match.path}/:subgroup`} component={(props) => (<ProdCategory {...props} data={this.state.data} isLoading={this.state.isLoading} error={this.state.error}/>) }/>
-					<Route path={`${match.path}`} render={(props) => (<ProdCategories {...props} data={this.state.data} isLoading={this.state.isLoading} error={this.state.error}/>) }/>
-				</Switch>
+				<ProdSubMenu match={match} data={data}/>
+					<Route path={`${match.path}/:subgroup`} render={(props) => (<ProdCategory {...props} data={this.state.data} />) }/>
+					<Route exact path={`${match.path}`} render={(props) => (<Categories {...props} data={this.state.data} />) }/>
 			</div>
 		)	
 	}

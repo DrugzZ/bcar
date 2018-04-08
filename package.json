@@ -6,10 +6,13 @@
     "bootstrap": "4.0.0-beta.2",
     "cloudinary-react": "1.0.6",
     "firebase": "4.10.1",
+    "lodash": "4.17.5",
+    "material-ui": "1.0.0-beta.38",
+    "mdi-material-ui": "3.2.0",
     "node-sass-chokidar": "0.0.3",
     "npm-run-all": "4.1.1",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
+    "react": "16.3.1",
+    "react-dom": "16.3.1",
     "react-progressive-bg-image": "3.0.0",
     "react-router-dom": "4.2.2",
     "react-scripts": "1.0.14",
@@ -27,7 +30,6 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "image-webpack-loader": "3.4.2",
-    "react-snap": "1.11.4"
+    "image-webpack-loader": "3.4.2"
   }
 }

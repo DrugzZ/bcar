@@ -2,6 +2,10 @@ import React, {Component} from 'react';
 import { db } from '../fb';
 import { Route, NavLink } from 'react-router-dom';
 import { Image } from 'cloudinary-react';
+import IconButton from 'material-ui/IconButton';
+import {ChevronLeft, ChevronRight} from 'mdi-material-ui'
+import ToTop from './ToTop';
+import ProdSpecs from './ProdSpecs';
 import ReactSwipe from 'react-swipe';
 
 class ProdCategory extends Component {
@@ -12,7 +16,8 @@ class ProdCategory extends Component {
         isLoading: true,
         error: null,
     };
-    this.capFirst = this.capFirst.bind(this)
+    this.next = this.next.bind(this)
+    this.prev = this.prev.bind(this)
   }
 
   componentDidMount() {
@@ -36,14 +41,18 @@ class ProdCategory extends Component {
 		.catch(error => this.setState({error, isLoading: false}));
   }
 
-  capFirst(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
+  next() {
+    this.refs.reactSwipe.next();
+  }
+
+  prev() {
+    this.refs.reactSwipe.prev();
   }
 
   render() {
 
-  		if(this.state.isLoading || this.props.isLoading)
-  			return ''
+  		if(this.state.isLoading)
+  			return <p>Loading...</p>
 
   		const data = this.state.data
 
@@ -52,56 +61,46 @@ class ProdCategory extends Component {
 		
 		return (
 			<div className="container pb-5">
+				<ToTop />
 				<div>
 					<div className="row justify-content-center">
 						<div className="col-md-6 bg-white mb-5 subgroup--picframe">
-							<ReactSwipe className="carousel" swipeOptions={{continuous: false}}>
+							<ReactSwipe ref="reactSwipe" className="carousel" swipeOptions={{continuous: false}}>
 				                {images.map((image, index) =>
-				                	<div>
+				                	<div key={index}>
 					                	<Image 
 											cloudName="bcar" 
 											publicId={image}
-											width="700"
-											crop="scale" 
+											width="auto" 
+											responsive={true}
+											responsive_placeholder="blank"
+											height="500"
+											crop="pad"
+											quality="70"
+											background="white" 
 											fetchFormat="auto" 
 											className="img-fluid p-5"
 										/>
 									</div>
 								)}
 				            </ReactSwipe>
+				            <IconButton onClick={this.prev} aria-label="Previous">
+						        <ChevronLeft />
+						    </IconButton>
+						    <IconButton onClick={this.next} aria-label="Next">
+						        <ChevronRight style={{ fontSize: 36 }}/>
+						    </IconButton>
 						</div>
 					</div>
 				</div>
-				<div className="px-0 subgroup--submenu">
-					<ul className="nav justify-content-center text-uppercase">
+					<nav className="d-flex justify-content-md-center text-uppercase subgroup--submenu">
 						{data.map((mach, index) => {
 							const first = (index === 0) ? '' : ('/' + mach.model);
-							return <li key={index} className="nav-item"><NavLink activeClassName="subgroup--active" className="nav-link p4" exact replace to={this.props.match.url + first}>{mach.model}</NavLink></li>
+							return <NavLink key={index} activeClassName="subgroup--active d-inline-block" className="py-2 px-3" exact replace to={this.props.match.url + first}>{mach.model}</NavLink>
 						})}
-					</ul>
-				</div>
-				{data.map((mach, index) => {
-					const first = (index === 0) ? '' : ('/' + mach.model);
-					const exact = (index === 0) ? true : false;
-					return <Route key={index} exact={exact} path={this.props.match.path + first} render={() => 
-						<div className="bg-white px-5 py-5 b-sh row">
-						<h3 className="mb-4">{`${this.capFirst(mach.type)} ${mach.model.toUpperCase()}`}</h3>
-						<div className="row">
-							{mach.specs.map((spec) => 
-								<div key={spec.orderNum} className="col-md-4">
-									<p className="h5 my-3">{this.capFirst(spec.group)}</p>
-									{spec.values.map((value, index) =>
-										<div key={index} className="pl-2 my-2">
-										<p className="h6">{value.name}</p>
-										<p className="simple-txt pl-2 m-0">{`${value.value} ${value.unit ? value.unit : ''}`}</p>
-										</div>)}
-								</div>)}
-							
-						</div>
-						</div>}
-					/>
-				})}
-
+					</nav>
+				<Route exact path={`${this.props.match.path}`}  component={props => (<ProdSpecs {...props} data={data}/>)}/>
+				<Route path={`${this.props.match.path}/:model`}  component={props => (<ProdSpecs {...props} data={data}/>)}/>
 			</div>
 		)	
 	}

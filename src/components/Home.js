@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import ToTop from './ToTop';
 import ProgressiveImage from 'react-progressive-bg-image';
 import bg_panel_1_lg from '../assets/bg_panel_1--lg.jpg';
 import bg_panel_1_xxs from '../assets/bg_panel_1--xxs.jpg';
@@ -26,8 +27,9 @@ const StyledPImg = styled(ProgressiveImage)`
   }
 `;
 
-const Home = ({data, isLoading, error, location, history, match}) => (
+const Home = ({data}) => (
 	<div className="wrap">
+				<ToTop />
 				<section className="container-fluid">
 					<div className="row">
 						<div className="col-md-6 s-bg-img py-5 pl-5">
@@ -41,7 +43,7 @@ const Home = ({data, isLoading, error, location, history, match}) => (
 							/>
 							<p className="h2">{data.section}</p>
 							<ul className="list-unstyled">
-							  {isLoading ? '' : data.types.map((type, index) => <li key={index}><Link className="h5" to={`${type.replace(' ', '-').toLowerCase()}`}>{type}</Link></li>)}							  
+							  {data.types.map((type, index) => <li key={index}><Link className="h5" to={`${type.replace(' ', '-').toLowerCase()}`}>{type}</Link></li>)}							  
 							</ul>
 						</div>
 						<div className="col-md-6 s2-wrap py-5 pl-5">
