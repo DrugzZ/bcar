@@ -1,12 +1,12 @@
-import React, {Component} from 'react';
+import React, { Component } from "react";
 
 class ToTop extends Component {
   componentDidMount() {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
   }
 
   render() {
-    return null
+    return null;
   }
 }
 

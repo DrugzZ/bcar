@@ -30,6 +30,9 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "image-webpack-loader": "3.4.2"
+    "eslint-config-prettier": "2.9.0",
+    "eslint-plugin-prettier": "2.6.0",
+    "image-webpack-loader": "3.4.2",
+    "prettier": "1.11.1"
   }
 }

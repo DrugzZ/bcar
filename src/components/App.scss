@@ -1,10 +1,10 @@
-$dark:                              #333433;
-$yellow:                            #F4C430;
-$red:                               #F25F5C;
-$blue:                              #247BA0;
-$teal:                              #74B8BB;
-$green:                             #9BC53D;
-$text-light:                        #fcfcfc;
+$dark: #333433;
+$yellow: #f4c430;
+$red: #f25f5c;
+$blue: #247ba0;
+$teal: #74b8bb;
+$green: #9bc53d;
+$text-light: #fcfcfc;
 
 $link-color: $text-light;
 
@@ -12,7 +12,6 @@ $link-color: $text-light;
 
 html {
   font-size: 0.8rem;
-
 }
 
 body {
@@ -21,114 +20,118 @@ body {
 }
 
 .b-sh {
-  box-shadow:0 2px 5px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
 }
 
-.simple-txt{
+.simple-txt {
   letter-spacing: 0;
   font-size: 0.9rem;
-  color: lighten($dark, 10%)
+  color: lighten($dark, 10%);
 }
 
 .list-unstyled > li {
   line-height: 2rem;
-    >a {
+  > a {
     padding-left: 1rem;
     letter-spacing: 1.2px;
     font-weight: 300;
-      &:hover{
-        text-decoration: none;
-      }
+    &:hover {
+      text-decoration: none;
+    }
   }
 }
 
-.a--styled{
-    color: $red;
-    text-decoration: none !important;
-    border-bottom: 1px solid rgba( $red, .4 );
+.a--styled {
+  color: $red;
+  text-decoration: none !important;
+  border-bottom: 1px solid rgba($red, 0.4);
 }
 
 .fancy-font {
-    font-family: Meringue;
+  font-family: Meringue;
 }
 
 .App-logo {
-  height: 50px; }
+  height: 50px;
+}
 
 .wrap {
-  background: #f8f9fa; }
+  background: #f8f9fa;
+}
 
 .topbar-nav {
-  font-size: .9rem;
+  font-size: 0.9rem;
   font-weight: 400;
-    >*{
-      padding: .5rem; }
-    >*:hover {
-        cursor: default;
-    }
+  > * {
+    padding: 0.5rem;
+  }
+  > *:hover {
+    cursor: default;
+  }
 }
 
 .submenu {
-  box-shadow:0 2px 5px rgba(0,0,0,0.08);
-    overflow: auto;
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  overflow: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
   -ms-overflow-style: -ms-autohiding-scrollbar;
-  &::-webkit-scrollbar{
-    display:none;
+  &::-webkit-scrollbar {
+    display: none;
   }
-  a{
-    font-weight:500;
+  a {
+    font-weight: 500;
     color: $dark;
     padding: 0.5rem 1rem;
-    &:hover{
+    &:hover {
       color: lighten($dark, 25%);
-      text-decoration: none!important;
+      text-decoration: none !important;
     }
   }
 }
 
 .submenu--active {
   border-bottom: 2px solid $red;
-  color: $red!important;
+  color: $red !important;
 }
 
 .subgroup--active {
-  background-color:white;
-  color: $dark!important;
+  background-color: white;
+  color: $dark !important;
 }
 
 .subgroup--submenu {
-    overflow: auto;
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
+  overflow: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
   -ms-overflow-style: -ms-autohiding-scrollbar;
-  &::-webkit-scrollbar{
-    display:none;
+  &::-webkit-scrollbar {
+    display: none;
   }
-  a{
-    font-weight:500;
+  a {
+    font-weight: 500;
     color: lighten($dark, 25%);
-    &:hover{
+    &:hover {
       color: $dark;
-      text-decoration: none!important;
+      text-decoration: none !important;
     }
   }
 }
 
 .subgroup--picframe {
-  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
 }
 
 .s-bg-img {
   overflow: hidden;
   z-index: 1;
-  > *:first-letter, ul > li:first-letter {
+  > *:first-letter,
+  ul > li:first-letter {
     text-transform: uppercase;
   }
   &:hover {
-    >:first-child{
-        transform: scale(1.08);
+    > :first-child {
+      transform: scale(1.08);
     }
   }
 }
@@ -137,8 +140,8 @@ body {
   z-index: 1;
   overflow: hidden;
   &:before {
-    background: linear-gradient(rgba($dark,0.9), rgba($dark,0.9)),
-    url(https://scontent-frx5-1.xx.fbcdn.net/v/t1.0-9/1014274_523667927681422_192679621_n.jpg?oh=d14a460d1357ea312219309dc827a3f2&oe=5B1981C9);
+    background: linear-gradient(rgba($dark, 0.9), rgba($dark, 0.9)),
+      url(https://scontent-frx5-1.xx.fbcdn.net/v/t1.0-9/1014274_523667927681422_192679621_n.jpg?oh=d14a460d1357ea312219309dc827a3f2&oe=5B1981C9);
     background-size: cover;
     background-position: center bottom;
     content: "";
@@ -148,10 +151,10 @@ body {
     top: 0;
     width: 101%;
     height: 101%;
-    transition: all .2s ease-out;
+    transition: all 0.2s ease-out;
   }
   &:hover:before {
-      transform: scale(1.05); 
+    transform: scale(1.05);
   }
 }
 
@@ -159,8 +162,8 @@ body {
   z-index: 1;
   overflow: hidden;
   &:before {
-    background: linear-gradient(rgba($blue,0.9), rgba($blue,0.9)),
-    url(../assets/bg_panel2.jpg);
+    background: linear-gradient(rgba($blue, 0.9), rgba($blue, 0.9)),
+      url(../assets/bg_panel2.jpg);
     background-size: cover;
     content: "";
     position: absolute;
@@ -169,10 +172,10 @@ body {
     top: 0;
     width: 100%;
     height: 100%;
-    transition: all .2s ease-out;
+    transition: all 0.2s ease-out;
   }
   &:hover:before {
-      transform: scale(1.05); 
+    transform: scale(1.05);
   }
 }
 
@@ -180,8 +183,8 @@ body {
   z-index: 1;
   overflow: hidden;
   &:before {
-    background: linear-gradient(rgba($red,0.9), rgba($red,0.9)),
-    url(../assets/bg_panel3.jpg);
+    background: linear-gradient(rgba($red, 0.9), rgba($red, 0.9)),
+      url(../assets/bg_panel3.jpg);
     background-size: cover;
     content: "";
     position: absolute;
@@ -190,10 +193,10 @@ body {
     top: 0;
     width: 100%;
     height: 100%;
-    transition: all .2s ease-out;
+    transition: all 0.2s ease-out;
   }
   &:hover:before {
-      transform: scale(1.05); 
+    transform: scale(1.05);
   }
 }
 
@@ -201,8 +204,8 @@ body {
   z-index: 1;
   overflow: hidden;
   &:before {
-    background: linear-gradient(rgba($dark,0.9), rgba($dark,0.9)),
-    url(../assets/bg_panel3.jpg);
+    background: linear-gradient(rgba($dark, 0.9), rgba($dark, 0.9)),
+      url(../assets/bg_panel3.jpg);
     background-size: cover;
     content: "";
     position: absolute;
@@ -211,10 +214,10 @@ body {
     top: 0;
     width: 100%;
     height: 100%;
-    transition: all .2s ease-out;
+    transition: all 0.2s ease-out;
   }
   &:hover:before {
-      transform: scale(1.05); 
+    transform: scale(1.05);
   }
 }
 
@@ -222,8 +225,8 @@ body {
   z-index: 1;
   overflow: hidden;
   &:before {
-    background: linear-gradient(rgba($dark,0.9), rgba($dark,0.9)),
-    url(../assets/bg_panel1.jpg);
+    background: linear-gradient(rgba($dark, 0.9), rgba($dark, 0.9)),
+      url(../assets/bg_panel1.jpg);
     background-size: cover;
     content: "";
     position: absolute;
@@ -232,10 +235,10 @@ body {
     top: 0;
     width: 100%;
     height: 100%;
-    transition: all .2s ease-out;
+    transition: all 0.2s ease-out;
   }
   &:hover:before {
-      transform: scale(1.05); 
+    transform: scale(1.05);
   }
 }
 
@@ -243,8 +246,8 @@ body {
   z-index: 1;
   overflow: hidden;
   &:before {
-    background: linear-gradient(rgba($yellow,0.9), rgba($yellow,0.9)),
-    url(../assets/bg_panel1.jpg);
+    background: linear-gradient(rgba($yellow, 0.9), rgba($yellow, 0.9)),
+      url(../assets/bg_panel1.jpg);
     background-size: cover;
     content: "";
     position: absolute;
@@ -253,26 +256,26 @@ body {
     top: 0;
     width: 100%;
     height: 100%;
-    transition: all .2s ease-out;
+    transition: all 0.2s ease-out;
   }
   &:hover:before {
-      transform: scale(1.05); 
+    transform: scale(1.05);
   }
 }
 
 .Categories--single-cat {
-  box-shadow: 0 3px 6px rgba(0,0,0,0.02), 0 3px 6px rgba(0,0,0,0.08);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.02), 0 3px 6px rgba(0, 0, 0, 0.08);
   p {
     line-height: 1.5rem;
   }
 }
 
-.Categories--specs{
-  img{
-      width: 1.5rem;
-      height: 1.5rem;
+.Categories--specs {
+  img {
+    width: 1.5rem;
+    height: 1.5rem;
   }
-  span{
+  span {
     font-size: 1.2rem;
     letter-spacing: 0;
   }
