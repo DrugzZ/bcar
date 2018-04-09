@@ -32,7 +32,7 @@ class App extends Component {
       .catch(error => this.setState({ error, isLoading: false }));
   }
   render() {
-    const { data, isLoading, error } = this.state;
+    const { data, isLoading } = this.state;
 
     return (
       <div className="App">

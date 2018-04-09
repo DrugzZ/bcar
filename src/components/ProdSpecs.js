@@ -1,17 +1,10 @@
 import React, { Component } from "react";
-import { db } from "../fb";
 import { find } from "lodash";
 
 import Radio, { RadioGroup } from "material-ui/Radio";
-import {
-  FormLabel,
-  FormControl,
-  FormControlLabel,
-  FormHelperText
-} from "material-ui/Form";
+import { FormLabel, FormControl, FormControlLabel } from "material-ui/Form";
 import Input, { InputLabel } from "material-ui/Input";
 import { MenuItem } from "material-ui/Menu";
-import ListSubheader from "material-ui/List/ListSubheader";
 import Select from "material-ui/Select";
 
 class ProdSpecs extends Component {
@@ -38,7 +31,7 @@ class ProdSpecs extends Component {
 
   handleChangeHeight(e) {
     if (e.target.name === "liftType") {
-      this.state.model.heights.map((options, index) => {
+      this.state.model.heights.forEach((options, index) => {
         if (options.name === e.target.value) {
           this.setState({ heights: options.options });
         }
